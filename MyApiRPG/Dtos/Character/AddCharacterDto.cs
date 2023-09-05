@@ -1,8 +1,7 @@
-namespace MyApiRPG.Models;
+namespace MyApiRPG.Dtos.Character;
 
-public class Character
+public class AddCharacterDto
 {
-    public int Id { get; set; }
     public string Name { get; set; } = "Frodo";
     public int HitPoints { get; set; } = 100;
     public int Strength { get; set; } = 10;
