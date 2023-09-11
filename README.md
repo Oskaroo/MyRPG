@@ -4,12 +4,12 @@
 
 MyRPG is a game simulator, which makes possible to Get full list of characters, Add new, Delete, and Update them.
 for this app i used technologies such as:
--Web Api
--EntityFrameworkCore
--Nunit
--Moq
--Automapper
--SQL
+- Web Api
+- EntityFrameworkCore
+- Nunit
+- Moq
+- Automapper
+- SQL
 
 All services are async, to prepare for bigger apps.
 
