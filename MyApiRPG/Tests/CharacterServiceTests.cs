@@ -47,8 +47,38 @@ namespace MyApiRPG.Tests
             
             Assert.IsTrue(result.Success);
             Assert.IsNotNull(result.Data);
-            if (result.Data != null) Assert.AreEqual("2", result.Data.Count.ToString());
+            Assert.AreEqual("2", result.Data!.Count.ToString());
             
         }
+        
+        [Test]
+        public async Task GetCharacterById_ReturnsCharacter()
+        {
+            var result = await _characterService.GetCharacterById(1);
+            
+            Assert.IsTrue(result.Success);
+            Assert.IsNotNull(result.Data);
+            Assert.AreEqual("Character1", result.Data!.Name);
+        }
+        
+        [Test]
+        public async Task GetCharacterById_ReturnsNull()
+        {
+            var result = await _characterService.GetCharacterById(3);
+            
+            Assert.IsFalse(result.Success);
+            Assert.IsNull(result.Data);
+        }
+        
+        /*public async Task AddCharacter_ReturnsListOfCharacters()
+        {
+            var result = await _characterService.AddCharacter(new AddCharacterDto { Name = "Character3" });
+            
+            Assert.IsTrue(result.Success);
+            Assert.IsNotNull(result.Data);
+            if (result.Data != null) Assert.AreEqual("Character1", result.Data.Name);
+        }*/
+        
+        
     }
 }
